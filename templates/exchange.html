@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exchange</title>
+</head>
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label>Secim edin:</label>
+        <select name="select1" id="">
+          <option value="usd">USD</option>
+          <option value="azn">AZN</option>
+        </select>
+        <select name="select2" id="">
+            <option value="usd">USD</option>
+          <option value="azn">AZN</option>
+        </select> <br>
+        <input type="text" name="answer"> <br>
+        <button>Exchange</button> <br>
+
+        {{ data }}
+    </form>
+</body>
+</html>

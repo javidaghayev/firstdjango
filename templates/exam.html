@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+    
+        <h3>5*5?</h3>
+        <input type="radio" name="sual1" value="a"> A. 15  <br>
+        <input type="radio" name="sual1" value="b"> B. 5 <br>
+        <input type="radio" name="sual1" value="c"> C. 25 <br>
+        <input type="radio" name="sual1" value="d"> D. 55 <br>
+    
+
+        <h3>3*11?</h3>
+        <input type="radio" name="sual2" value="a"> A. 11  <br>
+        <input type="radio" name="sual2" value="b"> B. 33 <br>
+        <input type="radio" name="sual2" value="c"> C. 30 <br>
+        <input type="radio" name="sual2" value="d"> D. 99 <br>
+
+
+        <h3>9*11?</h3>
+        <input type="radio" name="sual3" value="a"> A. 110  <br>
+        <input type="radio" name="sual3" value="b"> B. 33 <br>
+        <input type="radio" name="sual3" value="c"> C. 91 <br>
+        <input type="radio" name="sual3" value="d"> D. 99 <br>
+
+
+        <h3>6*6?</h3>
+        <input type="radio" name="sual4" value="a"> A. 66  <br>
+        <input type="radio" name="sual4" value="b"> B. 6 <br>
+        <input type="radio" name="sual4" value="c"> C. 36 <br>
+        <input type="radio" name="sual4" value="d"> D. 63 <br>
+        
+
+        <h3>125-75?</h3>
+        <input type="radio" name="sual5" value="a"> A. 50  <br>
+        <input type="radio" name="sual5" value="b"> B. 25 <br>
+        <input type="radio" name="sual5" value="c"> C. 55 <br>
+        <input type="radio" name="sual5" value="d"> D. 100 <br>
+        <button>Bitti</button>
+        <br>
+
+        <h1>Duzgun cavablar: {{ true_ }} Sehv cavablar: {{ false_ }} Bal: {{ point_ }} </h1>
+    </form>
+</body>
+</html>

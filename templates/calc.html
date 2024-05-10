@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALC</title>
+</head>
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="text" name="first">
+        <input type="text" name="second"> <br>
+        <button name="operation" value="topla">+</button> 
+        <button name="operation" value="cix">-</button> 
+        <button name="operation" value="vur">*</button>
+        <button name="operation" value="bol">/</button>
+        
+
+        {{ data }}
+    </form>
+</body>
+</html>
