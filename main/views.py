@@ -22,39 +22,49 @@ def exam(request):
     count_true = 0
     count_false = 0
     if request.method == 'POST':
-        sual1 = request.POST['sual1']
-        sual2 = request.POST['sual2']
-        sual3 = request.POST['sual3']
-        sual4 = request.POST['sual4']
-        sual5 = request.POST['sual5']
 
-        if sual1 == 'c':
-            count_true += 1
-        elif sual1 == '':
+        if 'sual1' in request.POST:
+            if request.POST['sual1'] == 'c':
+                count_true += 1
+
+            else:
+                count_false += 1
+        else:
             pass
-        else:
-            count_false += 1
         
-        if sual2 == 'b':
-            count_true += 1
-        else:
-            count_false += 1
 
-        if sual3 == 'd':
-            count_true += 1
+        if 'sual2' in request.POST:
+            if request.POST['sual2'] == 'b':
+                count_true += 1
+            else:
+                count_false += 1
         else:
-            count_false += 1
-
-        if sual4 == 'c':
-            count_true += 1
-        else:
-            count_false += 1
-
-        if sual5 == 'a':
-            count_true += 1
-        else:
-            count_false += 1
+            pass
         
+        if 'sual3' in request.POST:
+            if request.POST['sual3'] == 'd':
+                count_true += 1
+            else:
+                count_false += 1
+        else:
+            pass
+
+        if 'sual4' in request.POST:
+            if request.POST['sual4'] == 'c':
+                count_true += 1
+            else:
+                count_false += 1
+        else:
+            pass
+        if 'sual5' in request.POST:
+            if request.POST['sual5'] == 'a':
+                count_true += 1
+            else:
+                count_false += 1
+        else:
+            pass
+
+       
     context = {
         'true_': count_true,
         'false_': count_false,
