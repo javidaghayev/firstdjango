@@ -1,21 +1,44 @@
-from django.shortcuts import render
 
+# from django.shortcuts import render
+from django.shortcuts import render
+import requests
 
 def exchange(request):
-    answer = ''
     context = {'data': ''}
+    
     if request.method == 'POST':
         answer = request.POST['answer']
         select1 = request.POST['select1']
         select2 = request.POST['select2']
-        if select1 == "azn" and select2 == "usd":
-            context = {'data': int(answer)/1.7}
-        elif select1 == "usd" and select2 == "azn":
-            context = {'data': int(answer)*1.7}
+        amount = float(answer)
+        response = requests.get('https://api.exchangerate-api.com/v4/latest/USD')
+        rates = response.json().get('rates', {})
+
+        if select1 in rates and select2 in rates:
+            rate1 = rates[select1]
+            rate2 = rates[select2]
+            result = (amount / rate1) * rate2
+            context = {'data': round(result, 2)}
         else:
-            context = {'data': answer}
-    
+            context = {'data': "error"}            
+        
     return render(request, "exchange.html", context)
+
+# def exchange(request):
+#     answer = ''
+#     context = {'data': ''}
+#     if request.method == 'POST':
+#         answer = request.POST['answer']
+#         select1 = request.POST['select1']
+#         select2 = request.POST['select2']
+#         if select1 == "azn" and select2 == "usd":
+#             context = {'data': int(answer)/1.7}
+#         elif select1 == "usd" and select2 == "azn":
+#             context = {'data': int(answer)*1.7}
+#         else:
+#             context = {'data': answer}
+    
+#     return render(request, "exchange.html", context)
 
 
 def exam(request):

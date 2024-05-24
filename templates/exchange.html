@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exchange</title>
 </head>
 <body>
-    <form action="" method="POST">
+    <form method="POST">
         {% csrf_token %}
-        <label>Secim edin:</label>
-        <select name="select1" id="">
-          <option value="usd">USD</option>
-          <option value="azn">AZN</option>
+        <select name="select1">
+            <option value="USD">USD</option>
+            <option value="AZN">AZN</option>
+            <option value="EUR">EUR</option>
         </select>
-        <select name="select2" id="">
-            <option value="usd">USD</option>
-          <option value="azn">AZN</option>
-        </select> <br>
-        <input type="text" name="answer"> <br>
-        <button>Exchange</button> <br>
-
-        {{ data }}
+        <select name="select2">
+            <option value="USD">USD</option>
+            <option value="AZN">AZN</option>
+            <option value="EUR">EUR</option>
+        </select>
+        <br><br>
+        <input type="text" name="answer">
+        <br><br>
+        <button>Hesabla</button>
     </form>
+    <br><br>
+    {{ data }}
 </body>
 </html>
