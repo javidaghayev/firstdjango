@@ -1,5 +1,3 @@
-
-# from django.shortcuts import render
 from django.shortcuts import render
 import requests
 
@@ -20,7 +18,7 @@ def exchange(request):
             result = (amount / rate1) * rate2
             context = {'data': round(result, 2)}
         else:
-            context = {'data': "error"}            
+            context = {'data': amount}            
         
     return render(request, "exchange.html", context)
 
